@@ -3,7 +3,7 @@ unit UItem;
 interface
 
 uses
-  Windows, SysUtils, Classes, Controls, Forms, ComCtrls, uControle;
+  Windows, SysUtils, Classes, Controls, Forms, ComCtrls, uControle,dialogs;
 
  type
 
@@ -25,7 +25,7 @@ uses
    function ValidaExcluirItem(id: integer) : Boolean;
 
    function InseriItem(id: integer; codigo, nome,descricao: String;  valorunit: double)   : Boolean;
-   function AlteraItem(id: integer; codigo, nome,descricao: String;  valorunit: double )  : Boolean;
+   function AlteraItem(id,idnovo: integer; codigo, nome,descricao: String;  valorunit: double )  : Boolean;
    function ExcluirItem(id: integer) : Boolean;
    function PesquisaItemProduto (pCodigo:string):TItem;
 
@@ -55,22 +55,24 @@ implementation
 
 { TItem }
 
-function TItem.AlteraItem(id: integer; codigo, nome, descricao: String;
+function TItem.AlteraItem(id, idnovo: integer; codigo, nome, descricao: String;
   valorunit: double): Boolean;
 begin
   FControle.sqqGeral.Close;
   FControle.sqqGeral.SQL.Clear;
   FControle.sqqGeral.SQL.Add(' update item ');
   FControle.sqqGeral.SQL.Add(' set codigo=:codigo, ');
-  FControle.sqqGeral.SQL.Add(' nome =:nome ');
-  FControle.sqqGeral.SQL.Add(' descricao =:descricao ');
+  FControle.sqqGeral.SQL.Add(' id =:idnovo, ');
+  FControle.sqqGeral.SQL.Add(' nome =:nome, ');
+  FControle.sqqGeral.SQL.Add(' descricao =:descricao, ');
   FControle.sqqGeral.SQL.Add(' valorunitario =:valorunitario ');
   FControle.sqqGeral.SQL.Add(' where (id=:id)');
-  FControle.sqqGeral.Parameters.ParamByName('id').Value        := id;
+  FControle.sqqGeral.Parameters.ParamByName('id').Value        := idnovo;
+  FControle.sqqGeral.Parameters.ParamByName('idnovo').Value    := id;
   FControle.sqqGeral.Parameters.ParamByName('codigo').Value    := codigo;
   FControle.sqqGeral.Parameters.ParamByName('nome').Value      := nome;
   FControle.sqqGeral.Parameters.ParamByName('descricao').Value := descricao;
-  FControle.sqqGeral.Parameters.ParamByName('altura').Value    := valorunit;
+  FControle.sqqGeral.Parameters.ParamByName('valorunitario').Value    := valorunit;
 
   try
     FControle.sqqGeral.ExecSQL;
@@ -95,7 +97,7 @@ begin
   FControle.sqqGeral.Close;
   FControle.sqqGeral.SQL.Clear;
   FControle.sqqGeral.SQL.Add('delete from item where id =:id');
-  FControle.sqqGeral.Parameters.ParamByName('id').Value     := id;
+  FControle.sqqGeral.Parameters.ParamByName('id').Value := id;
   try
     FControle.sqqGeral.ExecSQL;
     Result := True;
@@ -136,7 +138,7 @@ begin
   FControle.sqqGeral.SQL.Clear;
   FControle.sqqGeral.SQL.Add(' insert into item ');
   FControle.sqqGeral.SQL.Add(' (id, codigo,nome,descricao, valorunitario) ');
-  FControle.sqqGeral.SQL.Add(' values (:codigo,:nome,:descricao, :valorunitario )');
+  FControle.sqqGeral.SQL.Add(' values (:id,:codigo,:nome,:descricao, :valorunitario )');
 
   FControle.sqqGeral.Parameters.ParamByName('id').Value            := id;
   FControle.sqqGeral.Parameters.ParamByName('codigo').Value        := codigo;
@@ -184,18 +186,40 @@ end;
 function TItem.ValidaAlteraItem(id: integer; codigo, nome, descricao: String;
   valorunit: double): Boolean;
 begin
-
+  if (id >=0) and (codigo <> EmptyStr) and (nome <> EmptyStr) and (valorunit >=0.0) then
+   result := true
+  else
+   begin
+     ShowMessage('Os campos não podem estar vazios.');
+     result:= false;
+     exit;
+   end;
 end;
 
 function TItem.ValidaExcluirItem(id: integer): Boolean;
 begin
+ if (id >=0) then
+   result := True
+ else
+   begin
+     ShowMessage('O campo ID não pode ficar vazios.');
+     result:= false;
+     exit;
+   end;
 
 end;
 
 function TItem.ValidaInseriItem(id: integer; codigo, nome, descricao: String;
   valorunit: double): Boolean;
 begin
-
+  if (id >=0) and (codigo <> EmptyStr) and (nome <> EmptyStr) and (valorunit >=0.0) then
+   result := true
+  else
+   begin
+     ShowMessage('Os campos não podem estar vazios.');
+     result:= false;
+     exit;
+   end;
 end;
 
 end.

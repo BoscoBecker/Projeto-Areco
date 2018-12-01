@@ -4,7 +4,7 @@ object FrmCategoria: TFrmCategoria
   BorderStyle = bsNone
   Caption = 'Categoria'
   ClientHeight = 469
-  ClientWidth = 784
+  ClientWidth = 764
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,25 +19,26 @@ object FrmCategoria: TFrmCategoria
   object ShapeFundo: TShape
     Left = 0
     Top = 0
-    Width = 784
+    Width = 764
     Height = 469
     Align = alClient
     ExplicitLeft = 8
+    ExplicitWidth = 784
   end
-  object Label1: TLabel
-    Left = 589
-    Top = 71
-    Width = 158
-    Height = 33
+  object lblCategoria: TLabel
+    Left = 601
+    Top = 61
+    Width = 149
+    Height = 37
     Caption = 'CATEGORIAS'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'Tahoma'
+    Font.Name = 'Segoe UI Light'
     Font.Style = []
     ParentFont = False
   end
-  object Image2: TImage
+  object imgArecoCategorias: TImage
     Left = 8
     Top = 8
     Width = 116
@@ -7897,7 +7898,7 @@ object FrmCategoria: TFrmCategoria
       2B30313A303067CBF2320000000049454E44AE426082}
     Stretch = True
   end
-  object Label6: TLabel
+  object lblSlogan: TLabel
     Left = 174
     Top = 8
     Width = 504
@@ -7910,12 +7911,11 @@ object FrmCategoria: TFrmCategoria
     Font.Style = []
     ParentFont = False
   end
-  object GroupBox1: TGroupBox
-    Left = 21
-    Top = 104
+  object gpboxCat: TGroupBox
+    Left = 8
+    Top = 109
     Width = 742
     Height = 321
-    Caption = 'Registros'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBackground
     Font.Height = -11
@@ -7952,33 +7952,55 @@ object FrmCategoria: TFrmCategoria
       Height = 13
       Caption = 'ID:'
     end
+    object lblTitulo: TLabel
+      Left = 16
+      Top = 16
+      Width = 406
+      Height = 28
+      Caption = 'Tela de Edi'#231#227'o,Exclus'#227'o e Inclus'#227'o de Categorias '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -20
+      Font.Name = 'Segoe UI Light'
+      Font.Style = []
+      ParentFont = False
+    end
     object edtId: TEdit
       Left = 48
       Top = 78
       Width = 97
       Height = 21
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
+      TextHint = 'Ex: 1'
     end
     object edtCodigo: TEdit
       Left = 215
       Top = 78
       Width = 98
       Height = 21
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
+      TextHint = 'Ex: 01'
     end
     object edtNome: TEdit
       Left = 397
       Top = 78
       Width = 140
       Height = 21
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 2
+      TextHint = 'Ex: Limpeza'
     end
-    object DBGrid1: TDBGrid
+    object dbgridCategoria: TDBGrid
       Left = 16
       Top = 105
       Width = 629
       Height = 171
-      DataSource = DataSource1
+      DataSource = dtSourceCategoria
       TabOrder = 3
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clBackground
@@ -8014,6 +8036,8 @@ object FrmCategoria: TFrmCategoria
       Width = 75
       Height = 25
       Caption = '&Atualizar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 4
       OnClick = btnAtualizaGridClick
     end
@@ -8023,6 +8047,8 @@ object FrmCategoria: TFrmCategoria
       Width = 75
       Height = 25
       Caption = 'Al&terar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 6
       OnClick = btnAlterarClick
     end
@@ -8032,6 +8058,8 @@ object FrmCategoria: TFrmCategoria
       Width = 75
       Height = 25
       Caption = '&Deletar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 7
       OnClick = btnDeletarClick
     end
@@ -8041,6 +8069,8 @@ object FrmCategoria: TFrmCategoria
       Width = 75
       Height = 25
       Caption = '&Salvar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 8
       OnClick = btnSalvarClick
     end
@@ -8050,21 +8080,26 @@ object FrmCategoria: TFrmCategoria
       Width = 75
       Height = 25
       Caption = '&Novo'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 5
       OnClick = btnNovoClick
     end
   end
   object btnFechar: TButton
-    Left = 688
-    Top = 436
+    Left = 675
+    Top = 434
     Width = 75
     Height = 25
+    Hint = 'Fechar a Tela'
     Caption = 'Fechar'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
     OnClick = btnFecharClick
   end
   object QueryGrid: TADOQuery
-    Connection = ADOConnection1
+    Connection = adoConexao
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -8073,7 +8108,7 @@ object FrmCategoria: TFrmCategoria
     Left = 72
     Top = 48
   end
-  object ADOConnection1: TADOConnection
+  object adoConexao: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=' +
@@ -8088,7 +8123,7 @@ object FrmCategoria: TFrmCategoria
     Left = 152
     Top = 48
   end
-  object DataSource1: TDataSource
+  object dtSourceCategoria: TDataSource
     DataSet = QueryGrid
     Left = 208
     Top = 48

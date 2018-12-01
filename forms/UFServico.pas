@@ -9,15 +9,15 @@ uses
 
 type
   TFrmServico = class(TForm)
-    Label1: TLabel;
+    lblServico: TLabel;
     QueryGrid: TADOQuery;
-    ADOConnection1: TADOConnection;
-    DataSource1: TDataSource;
-    Shape1: TShape;
-    GroupBox1: TGroupBox;
+    adoConexao: TADOConnection;
+    dtSourceServicos: TDataSource;
+    ShapeFundo: TShape;
+    gpBoxServicos: TGroupBox;
     lblRegistros: TLabel;
-    Label4: TLabel;
-    DBGrid1: TDBGrid;
+    lblcodigo: TLabel;
+    dbGridServico: TDBGrid;
     btnAtualizaGrid: TButton;
     btnAlterar: TButton;
     btnDeletar: TButton;
@@ -25,8 +25,9 @@ type
     btnNovo: TButton;
     edtCodigoServ: TEdit;
     btnFechar: TButton;
-    Image2: TImage;
-    Label6: TLabel;
+    imgArecoServiços: TImage;
+    lblSlogan: TLabel;
+    lblTitulo: TLabel;
     procedure btnFecharClick(Sender: TObject);
     procedure btnAtualizaGridClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -162,7 +163,7 @@ end;
 
 function TFrmServico.getIdView: integer;
 begin
-  result:= DBGrid1.Columns[0].Field.Value;
+  result:= dbGridServico.Columns[0].Field.Value;
 end;
 
 procedure TFrmServico.LimpaCampos;

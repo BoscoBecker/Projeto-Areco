@@ -3,8 +3,8 @@ object FrmSplash: TFrmSplash
   Top = 0
   BorderStyle = bsNone
   Caption = 'FrmSplash'
-  ClientHeight = 323
-  ClientWidth = 667
+  ClientHeight = 299
+  ClientWidth = 670
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,22 +15,22 @@ object FrmSplash: TFrmSplash
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object Shape1: TShape
+  object ShapeFundo: TShape
     Left = 0
     Top = 0
-    Width = 667
-    Height = 323
+    Width = 670
+    Height = 299
     Align = alClient
     ExplicitLeft = -104
     ExplicitTop = 136
     ExplicitWidth = 633
     ExplicitHeight = 426
   end
-  object Image1: TImage
-    Left = 370
-    Top = 234
-    Width = 289
-    Height = 81
+  object ImgAreco30Anos: TImage
+    Left = 403
+    Top = 233
+    Width = 259
+    Height = 56
     Center = True
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000F90000
@@ -464,11 +464,11 @@ object FrmSplash: TFrmSplash
       00000049454E44AE426082}
     Proportional = True
   end
-  object Label2: TLabel
-    Left = 8
-    Top = 259
-    Width = 377
-    Height = 56
+  object lblSlogan: TLabel
+    Left = 18
+    Top = 244
+    Width = 356
+    Height = 38
     Caption = 'Quais s'#227'o as suas principais necessidades?'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -479,19 +479,19 @@ object FrmSplash: TFrmSplash
     WordWrap = True
   end
   object pnlImagemGestor: TPanel
-    Left = 16
-    Top = 8
-    Width = 643
-    Height = 220
+    Left = 1
+    Top = 1
+    Width = 668
+    Height = 224
     BevelOuter = bvNone
     ParentBackground = False
     TabOrder = 0
     Visible = False
-    object Image2: TImage
+    object imgGestor: TImage
       Left = 0
       Top = 0
-      Width = 643
-      Height = 220
+      Width = 668
+      Height = 224
       Align = alClient
       Center = True
       Picture.Data = {
@@ -12254,11 +12254,13 @@ object FrmSplash: TFrmSplash
         1223E348D14831B7EBAF78EA98236EC11B40988D7498EDFF008EDD7B6663F0FF
         00FA7D3F2E9FBCFC9A779FD27BEEF6C47D3A58DDFD3B4FA4FF004EFD7FFFD9}
       Stretch = True
-      ExplicitLeft = 16
+      ExplicitLeft = 32
+      ExplicitTop = -1
+      ExplicitHeight = 253
     end
     object lblGestor: TLabel
-      Left = 232
-      Top = 11
+      Left = 272
+      Top = 8
       Width = 349
       Height = 100
       Caption = 'O bom Gestor Sabe o que perguntar.'
@@ -12272,18 +12274,18 @@ object FrmSplash: TFrmSplash
     end
   end
   object pnlOperacional: TPanel
-    Left = 8
-    Top = 8
-    Width = 651
-    Height = 220
+    Left = 1
+    Top = 0
+    Width = 668
+    Height = 225
     BevelOuter = bvNone
     ParentBackground = False
     TabOrder = 1
     object imgOperacional: TImage
       Left = 0
       Top = 0
-      Width = 651
-      Height = 220
+      Width = 668
+      Height = 225
       Align = alClient
       Center = True
       Picture.Data = {
@@ -17927,10 +17929,10 @@ object FrmSplash: TFrmSplash
       ExplicitWidth = 553
       ExplicitHeight = 188
     end
-    object Label3: TLabel
-      Left = 8
-      Top = 15
-      Width = 353
+    object lblArecoOperacional: TLabel
+      Left = 17
+      Top = 23
+      Width = 356
       Height = 172
       Caption = 'Automatize processos, simplifique rotinas e otimize recursos. '
       Color = clBtnFace

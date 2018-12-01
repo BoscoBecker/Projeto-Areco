@@ -1,10 +1,10 @@
-object FrmServico: TFrmServico
+﻿object FrmServico: TFrmServico
   Left = 0
   Top = 0
   BorderStyle = bsNone
   Caption = 'FrmServico'
   ClientHeight = 469
-  ClientWidth = 778
+  ClientWidth = 761
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,29 +16,29 @@ object FrmServico: TFrmServico
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Shape1: TShape
+  object ShapeFundo: TShape
     Left = 0
     Top = 0
-    Width = 778
+    Width = 761
     Height = 469
     Align = alClient
     ExplicitTop = -40
     ExplicitWidth = 797
   end
-  object Label1: TLabel
-    Left = 652
-    Top = 69
-    Width = 111
-    Height = 33
+  object lblServico: TLabel
+    Left = 656
+    Top = 82
+    Width = 94
+    Height = 37
     Caption = 'Servi'#231'os'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'Tahoma'
+    Font.Name = 'Segoe UI Light'
     Font.Style = []
     ParentFont = False
   end
-  object Image2: TImage
+  object imgArecoServiços: TImage
     Left = 8
     Top = 8
     Width = 116
@@ -7898,7 +7898,7 @@ object FrmServico: TFrmServico
       2B30313A303067CBF2320000000049454E44AE426082}
     Stretch = True
   end
-  object Label6: TLabel
+  object lblSlogan: TLabel
     Left = 174
     Top = 8
     Width = 504
@@ -7911,12 +7911,11 @@ object FrmServico: TFrmServico
     Font.Style = []
     ParentFont = False
   end
-  object GroupBox1: TGroupBox
-    Left = 21
-    Top = 108
+  object gpBoxServicos: TGroupBox
+    Left = 8
+    Top = 120
     Width = 742
-    Height = 321
-    Caption = 'Registros'
+    Height = 309
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBackground
     Font.Height = -11
@@ -7931,21 +7930,40 @@ object FrmServico: TFrmServico
       Height = 13
       AutoSize = False
       Caption = 'Registros(0)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -11
+      Font.Name = 'Segoe UI Light'
+      Font.Style = [fsItalic]
+      ParentFont = False
     end
-    object Label4: TLabel
+    object lblcodigo: TLabel
       Left = 16
       Top = 81
       Width = 37
       Height = 13
       Caption = 'C'#243'digo:'
     end
-    object DBGrid1: TDBGrid
+    object lblTitulo: TLabel
+      Left = 16
+      Top = 16
+      Width = 381
+      Height = 28
+      Caption = 'Tela de Edi'#231#227'o,Exclus'#227'o e Inclus'#227'o de Servi'#231'os'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -20
+      Font.Name = 'Segoe UI Light'
+      Font.Style = []
+      ParentFont = False
+    end
+    object dbGridServico: TDBGrid
       Left = 16
       Top = 105
       Width = 629
       Height = 171
-      DataSource = DataSource1
-      TabOrder = 0
+      DataSource = dtSourceServicos
+      TabOrder = 6
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clBackground
       TitleFont.Height = -11
@@ -7956,6 +7974,7 @@ object FrmServico: TFrmServico
           Expanded = False
           FieldName = 'codigoservico'
           Title.Caption = 'C'#243'digo do Servi'#231'o'
+          Width = 282
           Visible = True
         end>
     end
@@ -7964,7 +7983,10 @@ object FrmServico: TFrmServico
       Top = 127
       Width = 75
       Height = 25
+      Hint = 'Atualiza o Grid'
       Caption = '&Atualizar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
       OnClick = btnAtualizaGridClick
     end
@@ -7973,8 +7995,11 @@ object FrmServico: TFrmServico
       Top = 189
       Width = 75
       Height = 25
+      Hint = 'Alterar o registro'
       Caption = 'Al&terar'
-      TabOrder = 2
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
       OnClick = btnAlterarClick
     end
     object btnDeletar: TButton
@@ -7982,8 +8007,11 @@ object FrmServico: TFrmServico
       Top = 220
       Width = 75
       Height = 25
+      Hint = 'Deletar o registro'
       Caption = '&Deletar'
-      TabOrder = 3
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
       OnClick = btnDeletarClick
     end
     object btnSalvar: TButton
@@ -7991,8 +8019,11 @@ object FrmServico: TFrmServico
       Top = 251
       Width = 75
       Height = 25
+      Hint = 'Salvar o registro'
       Caption = '&Salvar'
-      TabOrder = 4
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
       OnClick = btnSalvarClick
     end
     object btnNovo: TButton
@@ -8000,8 +8031,11 @@ object FrmServico: TFrmServico
       Top = 158
       Width = 75
       Height = 25
+      Hint = 'Limpar os campos e preparado para salvar'
       Caption = '&Novo'
-      TabOrder = 5
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
       OnClick = btnNovoClick
     end
     object edtCodigoServ: TEdit
@@ -8009,20 +8043,24 @@ object FrmServico: TFrmServico
       Top = 78
       Width = 97
       Height = 21
-      TabOrder = 6
+      TabOrder = 0
+      TextHint = 'C'#243'digo do Servi'#231'o Ex: 01'
     end
   end
   object btnFechar: TButton
-    Left = 688
+    Left = 675
     Top = 435
     Width = 75
     Height = 25
+    Hint = 'Fechar a Tela'
     Caption = 'Fechar'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
     OnClick = btnFecharClick
   end
   object QueryGrid: TADOQuery
-    Connection = ADOConnection1
+    Connection = adoConexao
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -8030,7 +8068,7 @@ object FrmServico: TFrmServico
     Left = 72
     Top = 48
   end
-  object ADOConnection1: TADOConnection
+  object adoConexao: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=' +
@@ -8045,7 +8083,7 @@ object FrmServico: TFrmServico
     Left = 152
     Top = 48
   end
-  object DataSource1: TDataSource
+  object dtSourceServicos: TDataSource
     DataSet = QueryGrid
     Left = 208
     Top = 48

@@ -6,26 +6,28 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Data.DBXMSSQL, Data.DB,
   Data.SqlExpr, Vcl.StdCtrls, uControle, Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.ComCtrls;
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.ComCtrls,UfItem;
 
 type
   TFrmMenu = class(TForm)
     MainMenu1: TMainMenu;
-    Sobre1: TMenuItem;
-    Produtos: TMenuItem;
-    Servio1: TMenuItem;
-    Categoria1: TMenuItem;
-    Item1: TMenuItem;
-    Image1: TImage;
+    itemSobre: TMenuItem;
+    itemProdutos: TMenuItem;
+    itemServicos: TMenuItem;
+    itemCategoria: TMenuItem;
+    itmItem: TMenuItem;
     Shape1: TShape;
-    Sair1: TMenuItem;
+    itemSair: TMenuItem;
     StatusBar1: TStatusBar;
-    Image2: TImage;
+    Panel1: TPanel;
+    imgFundoTodo: TImage;
+    imgArecoCentro: TImage;
     procedure Button1Click(Sender: TObject);
-    procedure Categoria1Click(Sender: TObject);
-    procedure Sair1Click(Sender: TObject);
-    procedure ProdutosClick(Sender: TObject);
-    procedure Servio1Click(Sender: TObject);
+    procedure itemCategoriaClick(Sender: TObject);
+    procedure itemSairClick(Sender: TObject);
+    procedure itemProdutosClick(Sender: TObject);
+    procedure itemServicosClick(Sender: TObject);
+    procedure itmItemClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,25 +56,31 @@ begin
     controle.SqqGeral.Active := true;
 end;
 
-procedure TFrmMenu.Categoria1Click(Sender: TObject);
+procedure TFrmMenu.itemCategoriaClick(Sender: TObject);
 var FrmCategoria : TFrmCategoria;
 begin
  FrmCategoria := TFrmCategoria.create(self);
  FrmCategoria.Showmodal;
 end;
 
-procedure TFrmMenu.ProdutosClick(Sender: TObject);
+procedure TFrmMenu.itmItemClick(Sender: TObject);
+begin
+ FrmItem := TFrmItem.create(self);
+ FrmItem.Showmodal;
+end;
+
+procedure TFrmMenu.itemProdutosClick(Sender: TObject);
 begin
  FrmProduto := TFrmProduto.create(self);
  FrmProduto.Showmodal;
 end;
 
-procedure TFrmMenu.Sair1Click(Sender: TObject);
+procedure TFrmMenu.itemSairClick(Sender: TObject);
 begin
   close;
 end;
 
-procedure TFrmMenu.Servio1Click(Sender: TObject);
+procedure TFrmMenu.itemServicosClick(Sender: TObject);
 begin
  FrmServico := TFrmServico.create(self);
  FrmServico.Showmodal;

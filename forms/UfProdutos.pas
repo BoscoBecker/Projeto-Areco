@@ -9,28 +9,29 @@ uses
 
 type
   TFrmProduto = class(TForm)
-    Label1: TLabel;
+    lblProduto: TLabel;
     QueryGrid: TADOQuery;
-    ADOConnection1: TADOConnection;
-    DataSource1: TDataSource;
-    Shape1: TShape;
-    GroupBox1: TGroupBox;
-    Label3: TLabel;
+    adoconexao: TADOConnection;
+    dtsourceProdutos: TDataSource;
+    ShapeFundo: TShape;
+    gpBoxProdutos: TGroupBox;
+    lblaltura: TLabel;
     lblRegistros: TLabel;
-    Label2: TLabel;
+    lblPeso: TLabel;
     edtPeso: TEdit;
     edtAltura: TEdit;
-    DBGrid1: TDBGrid;
+    dbGridProdutos: TDBGrid;
     btnAtualizaGrid: TButton;
     btnAlterar: TButton;
     btnDeletar: TButton;
     btnSalvar: TButton;
     btnNovo: TButton;
     btnFechar: TButton;
-    Image2: TImage;
-    Label6: TLabel;
+    imgArecoProduto: TImage;
+    lblSlogan: TLabel;
     edtId: TEdit;
-    Label4: TLabel;
+    lblId: TLabel;
+    lblTitulo: TLabel;
     procedure btnFecharClick(Sender: TObject);
     procedure btnAtualizaGridClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -81,7 +82,7 @@ begin
       AtualizaGrid;
     end
       else
-        showmessage('O campos não pode ficar vazios.');
+        Application.MessageBox('Os campos não podem ficar vazios.', 'Informção',MB_ICONINFORMATION+mb_ok);
 
     //liberando da memoria
     produto.Destroy;
@@ -112,7 +113,7 @@ begin
       AtualizaGrid;
     end
     else
-     showmessage('O campo ID não pode ficar vazios.');
+      Application.MessageBox('O campo ID não podem ficar vazios.', 'Informção',MB_ICONINFORMATION+mb_ok);
 
     //liberando da memoria
     produto.Destroy;
@@ -148,7 +149,7 @@ begin
       AtualizaGrid;
     end
     else
-    showmessage('Os campos não podem ficar vazios.');
+      Application.MessageBox('O campo ID não podem ficar vazios.', 'Informção',MB_ICONINFORMATION+mb_ok);
 
     //liberando da memoria
     produto.Destroy;
@@ -172,7 +173,7 @@ end;
 
 function TFrmProduto.getIdView: integer;
 begin
-   result:= DBGrid1.Columns[0].Field.Value;
+   result:= dbGridProdutos.Columns[0].Field.Value;
 end;
 
 procedure TFrmProduto.LimpaCampos;

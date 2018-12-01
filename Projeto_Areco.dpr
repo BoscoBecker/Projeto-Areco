@@ -14,7 +14,8 @@ uses
   UfProdutos in 'forms\UfProdutos.pas' {FrmProduto},
   UFServico in 'forms\UFServico.pas' {FrmServico},
   UFSplash in 'forms\UFSplash.pas' {FrmSplash},
-  UItem in 'classes\UItem.pas';
+  UItem in 'classes\UItem.pas',
+  UfItem in 'forms\UfItem.pas' {FrmItem};
 
 var VImagem: TBitmap;
 
@@ -25,23 +26,40 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFrmSplash, FrmSplash);
-  FrmSplash.Show; //chama o formulário
-  FrmSplash.Refresh; //atualiza
-  Application.ProcessMessages;
-  Application.BringToFront;
+  Application.CreateForm(TFrmItem, FrmItem);
+  FrmSplash.Show;
 
-  //Sleep(4000); //tempo de exibição da tela
-  //FrmSplash.pnlOperacional.Visible := true;
+  Application.BringToFront;
   FrmSplash.Repaint;
-  Sleep(4000); //tempo de exibição da tela
+  FrmSplash.pnlOperacional.Visible := True;
+  FrmSplash.Repaint;
+  Application.ProcessMessages;
+
+  Sleep(2000);
+  FrmSplash.pnlImagemGestor.Visible := True;
   FrmSplash.pnlOperacional.Visible := False;
-  FrmSplash.pnlImagemGestor.Visible := true;
   FrmSplash.Repaint;
-  Sleep(3000); //tempo de exibição da tela
+  FrmSplash.lblGestor.Caption:=  'O bom Gestor Sabe o que perguntar.';
+  FrmSplash.lblGestor.Repaint;
+  FrmSplash.Repaint;
+  Sleep(900);
+
+  Application.ProcessMessages;
+  FrmSplash.lblGestor.Caption:=  'O bom Gestor Sabe o que perguntar..';
+  FrmSplash.lblGestor.Repaint;
+  FrmSplash.Repaint;
+  Sleep(900);
+
+  Application.ProcessMessages;
+  FrmSplash.lblGestor.Caption:=  'O bom Gestor Sabe o que perguntar...';
+  FrmSplash.lblGestor.Repaint;
+  FrmSplash.Repaint;
+  Sleep(900);
+
   FrmSplash.lblGestor.Caption := 'Há 30 anos nós respondemos...';
   FrmSplash.lblGestor.Repaint;
   FrmSplash.Repaint;
-  Sleep(4000); //tempo de exibição da tela
+  Sleep(2500);
 
   FrmSplash.Free; //ou Nomedoform.Release // libera da memória
   FrmSplash := Nil; //inutiliza a ação do ponteiro do mouse

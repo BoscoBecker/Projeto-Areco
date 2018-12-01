@@ -10,19 +10,19 @@ uses
 
 type
   TFrmCategoria = class(TForm)
-    Label1: TLabel;
+    lblCategoria: TLabel;
     QueryGrid: TADOQuery;
-    ADOConnection1: TADOConnection;
-    DataSource1: TDataSource;
+    adoConexao: TADOConnection;
+    dtSourceCategoria: TDataSource;
     ShapeFundo: TShape;
-    GroupBox1: TGroupBox;
+    gpboxCat: TGroupBox;
     lblId: TLabel;
     edtId: TEdit;
     lblCodigo: TLabel;
     edtCodigo: TEdit;
     lblNome: TLabel;
     edtNome: TEdit;
-    DBGrid1: TDBGrid;
+    dbgridCategoria: TDBGrid;
     btnAtualizaGrid: TButton;
     btnAlterar: TButton;
     btnDeletar: TButton;
@@ -30,8 +30,9 @@ type
     lblRegistros: TLabel;
     btnNovo: TButton;
     btnFechar: TButton;
-    Image2: TImage;
-    Label6: TLabel;
+    imgArecoCategorias: TImage;
+    lblSlogan: TLabel;
+    lblTitulo: TLabel;
     procedure btnSalvarClick(Sender: TObject);
     procedure btnAtualizaGridClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
@@ -73,9 +74,7 @@ var
 begin
     controle := TCOntrole.Create;
     controle.Create;
-
     categoria := TCategoria.Create(controle);
-    AtualizaGrid;
 
     if categoria.ValidaAlteraCategoria(StrToInt(edtId.Text),edtCodigo.Text,edtNome.Text) then
     begin
@@ -83,7 +82,8 @@ begin
       AtualizaGrid;
     end
     else
-      showmessage('O campos ID não pode ficar vazios.');
+    Application.MessageBox('O campo ID não podem ficar vazios.', 'Informção',MB_ICONINFORMATION+mb_ok);
+
 
     //liberando da memoria
     categoria.Destroy;
@@ -109,7 +109,8 @@ begin
       AtualizaGrid;
     end
     else
-      showmessage('O campos ID não pode ficar vazios.');
+    Application.MessageBox('O campo ID não podem ficar vazios.', 'Informção',MB_ICONINFORMATION+mb_ok);
+
 
     //liberando da memoria
     categoria.Destroy;
@@ -145,7 +146,8 @@ begin
       AtualizaGrid;
     end
     else
-    showmessage('Os campos não podem ficar vazios.');
+    Application.MessageBox('Os campos não podem ficar vazios.', 'Informção',MB_ICONINFORMATION+mb_ok);
+
 
     //liberando da memoria
     categoria.Destroy;
@@ -165,7 +167,7 @@ end;
 
 function TFrmCategoria.getIdView: integer;
 begin
-    result:= DBGrid1.Columns[0].Field.Value;
+    result:= dbgridCategoria.Columns[0].Field.Value;
 end;
 
 procedure TFrmCategoria.LimpaCampos;

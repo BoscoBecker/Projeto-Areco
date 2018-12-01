@@ -4,7 +4,7 @@ object FrmProduto: TFrmProduto
   BorderStyle = bsNone
   Caption = 'FrmProduto'
   ClientHeight = 469
-  ClientWidth = 778
+  ClientWidth = 764
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,29 +17,29 @@ object FrmProduto: TFrmProduto
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Shape1: TShape
+  object ShapeFundo: TShape
     Left = 0
     Top = 0
-    Width = 778
+    Width = 764
     Height = 469
     Align = alClient
     ExplicitWidth = 797
     ExplicitHeight = 481
   end
-  object Label1: TLabel
-    Left = 620
-    Top = 71
-    Width = 137
-    Height = 33
+  object lblProduto: TLabel
+    Left = 618
+    Top = 67
+    Width = 132
+    Height = 37
     Caption = 'PRODUTOS'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'Tahoma'
+    Font.Name = 'Segoe UI Light'
     Font.Style = []
     ParentFont = False
   end
-  object Image2: TImage
+  object imgArecoProduto: TImage
     Left = 8
     Top = 8
     Width = 116
@@ -7899,7 +7899,7 @@ object FrmProduto: TFrmProduto
       2B30313A303067CBF2320000000049454E44AE426082}
     Stretch = True
   end
-  object Label6: TLabel
+  object lblSlogan: TLabel
     Left = 174
     Top = 8
     Width = 504
@@ -7912,12 +7912,11 @@ object FrmProduto: TFrmProduto
     Font.Style = []
     ParentFont = False
   end
-  object GroupBox1: TGroupBox
-    Left = 21
+  object gpBoxProdutos: TGroupBox
+    Left = 8
     Top = 109
     Width = 742
     Height = 321
-    Caption = 'Registros'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBackground
     Font.Height = -11
@@ -7925,7 +7924,7 @@ object FrmProduto: TFrmProduto
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    object Label3: TLabel
+    object lblaltura: TLabel
       Left = 332
       Top = 76
       Width = 33
@@ -7940,40 +7939,61 @@ object FrmProduto: TFrmProduto
       AutoSize = False
       Caption = 'Registros(0)'
     end
-    object Label2: TLabel
+    object lblPeso: TLabel
       Left = 180
       Top = 76
       Width = 27
       Height = 13
       Caption = 'Peso:'
     end
-    object Label4: TLabel
+    object lblId: TLabel
       Left = 17
       Top = 76
       Width = 15
       Height = 13
       Caption = 'ID:'
     end
+    object lblTitulo: TLabel
+      Left = 16
+      Top = 16
+      Width = 388
+      Height = 28
+      Caption = 'Tela de Edi'#231#227'o,Exclus'#227'o e Inclus'#227'o de Produtos'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -20
+      Font.Name = 'Segoe UI Light'
+      Font.Style = []
+      ParentFont = False
+    end
     object edtPeso: TEdit
       Left = 213
       Top = 73
       Width = 97
       Height = 21
+      Hint = 'Informe o Peso Ex:10,0'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
+      TextHint = 'Informe o Peso Ex:10,0'
     end
     object edtAltura: TEdit
       Left = 371
       Top = 73
       Width = 140
       Height = 21
+      Hint = 'Informe a altura Ex: 1,80'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
+      TextHint = 'Informe a altura Ex: 1,80'
     end
-    object DBGrid1: TDBGrid
+    object dbGridProdutos: TDBGrid
       Left = 16
       Top = 105
       Width = 629
       Height = 171
-      DataSource = DataSource1
+      DataSource = dtsourceProdutos
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clBackground
@@ -8008,7 +8028,10 @@ object FrmProduto: TFrmProduto
       Top = 127
       Width = 75
       Height = 25
+      Hint = 'Atualiza o Grid'
       Caption = '&Atualizar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 3
       OnClick = btnAtualizaGridClick
     end
@@ -8017,7 +8040,10 @@ object FrmProduto: TFrmProduto
       Top = 189
       Width = 75
       Height = 25
+      Hint = 'Alterar o registro'
       Caption = 'Al&terar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 4
       OnClick = btnAlterarClick
     end
@@ -8026,7 +8052,10 @@ object FrmProduto: TFrmProduto
       Top = 220
       Width = 75
       Height = 25
+      Hint = 'Deletar o registro selecionado'
       Caption = '&Deletar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 5
       OnClick = btnDeletarClick
     end
@@ -8035,7 +8064,10 @@ object FrmProduto: TFrmProduto
       Top = 251
       Width = 75
       Height = 25
+      Hint = 'Salvar o registro'
       Caption = '&Salvar'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 6
       OnClick = btnSalvarClick
     end
@@ -8044,7 +8076,10 @@ object FrmProduto: TFrmProduto
       Top = 158
       Width = 75
       Height = 25
+      Hint = 'Limpar os campos e preparado para salvar'
       Caption = '&Novo'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 7
       OnClick = btnNovoClick
     end
@@ -8053,20 +8088,27 @@ object FrmProduto: TFrmProduto
       Top = 73
       Width = 97
       Height = 21
+      Hint = 'Informe o ID ex: 1'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 8
+      TextHint = 'Informe o ID ex: 1'
     end
   end
   object btnFechar: TButton
-    Left = 688
+    Left = 675
     Top = 436
     Width = 75
     Height = 25
+    Hint = 'Fechar a Tela'
     Caption = 'Fechar'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
     OnClick = btnFecharClick
   end
   object QueryGrid: TADOQuery
-    Connection = ADOConnection1
+    Connection = adoconexao
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -8076,7 +8118,7 @@ object FrmProduto: TFrmProduto
     Left = 72
     Top = 48
   end
-  object ADOConnection1: TADOConnection
+  object adoconexao: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=' +
@@ -8091,7 +8133,7 @@ object FrmProduto: TFrmProduto
     Left = 152
     Top = 48
   end
-  object DataSource1: TDataSource
+  object dtsourceProdutos: TDataSource
     DataSet = QueryGrid
     Left = 208
     Top = 48

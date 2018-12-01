@@ -9,15 +9,15 @@ uses
 
 type
   TFrmSplash = class(TForm)
-    Shape1: TShape;
-    Image1: TImage;
-    Label2: TLabel;
+    ShapeFundo: TShape;
+    ImgAreco30Anos: TImage;
+    lblSlogan: TLabel;
     pnlImagemGestor: TPanel;
-    Image2: TImage;
+    imgGestor: TImage;
     lblGestor: TLabel;
     pnlOperacional: TPanel;
     imgOperacional: TImage;
-    Label3: TLabel;
+    lblArecoOperacional: TLabel;
   private
 
     { Private declarations }

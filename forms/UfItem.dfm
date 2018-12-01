@@ -1,4 +1,4 @@
-object FrmItem: TFrmItem
+﻿object FrmItem: TFrmItem
   Left = 0
   Top = 0
   BorderStyle = bsNone
@@ -12,21 +12,9 @@ object FrmItem: TFrmItem
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 577
-    Top = 63
-    Width = 158
-    Height = 33
-    Caption = 'CATEGORIAS'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -27
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object ShapeFundo: TShape
     Left = 0
     Top = 0
@@ -38,7 +26,7 @@ object FrmItem: TFrmItem
     ExplicitWidth = 743
     ExplicitHeight = 384
   end
-  object Image2: TImage
+  object imgArecoItems: TImage
     Left = 8
     Top = 8
     Width = 116
@@ -7898,8 +7886,8 @@ object FrmItem: TFrmItem
       2B30313A303067CBF2320000000049454E44AE426082}
     Stretch = True
   end
-  object Label6: TLabel
-    Left = 167
+  object lblSlogan: TLabel
+    Left = 165
     Top = 0
     Width = 504
     Height = 48
@@ -7911,25 +7899,24 @@ object FrmItem: TFrmItem
     Font.Style = []
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 659
-    Top = 71
-    Width = 77
-    Height = 33
+  object lblItem: TLabel
+    Left = 692
+    Top = 67
+    Width = 69
+    Height = 37
     Caption = 'ITEMS'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -27
-    Font.Name = 'Tahoma'
+    Font.Name = 'Segoe UI Light'
     Font.Style = []
     ParentFont = False
   end
-  object GroupBox1: TGroupBox
+  object gpBoxItems: TGroupBox
     Left = 8
     Top = 110
-    Width = 742
+    Width = 753
     Height = 308
-    Caption = 'Registros'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBackground
     Font.Height = -11
@@ -7938,18 +7925,18 @@ object FrmItem: TFrmItem
     ParentFont = False
     TabOrder = 0
     object lblCodigo: TLabel
-      Left = 172
+      Left = 111
       Top = 81
       Width = 37
       Height = 13
       Caption = 'C'#243'digo:'
     end
-    object lblNome: TLabel
-      Left = 360
+    object lblDescriao: TLabel
+      Left = 364
       Top = 81
-      Width = 31
+      Width = 50
       Height = 13
-      Caption = 'Nome:'
+      Caption = 'Descri'#231#227'o:'
     end
     object lblRegistros: TLabel
       Left = 16
@@ -7958,42 +7945,91 @@ object FrmItem: TFrmItem
       Height = 13
       AutoSize = False
       Caption = 'Registros(0)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -11
+      Font.Name = 'Segoe UI Light'
+      Font.Style = [fsItalic]
+      ParentFont = False
     end
     object lblId: TLabel
-      Left = 27
+      Left = 19
       Top = 81
       Width = 15
       Height = 13
       Caption = 'ID:'
     end
+    object lblNome: TLabel
+      Left = 220
+      Top = 81
+      Width = 31
+      Height = 16
+      Caption = 'Nome:'
+    end
+    object lbtitulo: TLabel
+      Left = 16
+      Top = 16
+      Width = 362
+      Height = 28
+      Caption = 'Tela de Edi'#231#227'o,Exclus'#227'o e Inclus'#227'o de Items '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -20
+      Font.Name = 'Segoe UI Light'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lçblVltUnit: TLabel
+      Left = 520
+      Top = 81
+      Width = 48
+      Height = 13
+      Caption = 'Valor Unt:'
+    end
     object edtId: TEdit
-      Left = 48
+      Left = 40
       Top = 78
-      Width = 97
+      Width = 65
       Height = 21
+      Hint = ' Ex:01'
+      Ctl3D = True
+      DoubleBuffered = False
+      ParentCtl3D = False
+      ParentDoubleBuffered = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
+      TextHint = 'Ex:1'
     end
     object edtCodigo: TEdit
-      Left = 215
+      Left = 149
       Top = 78
-      Width = 98
+      Width = 63
       Height = 21
+      Hint = ' Ex:01'
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
+      TextHint = ' Ex:01'
     end
-    object edtNome: TEdit
-      Left = 397
+    object edtDescricao: TEdit
+      Left = 415
       Top = 78
-      Width = 140
+      Width = 99
       Height = 21
-      TabOrder = 2
+      Hint = 'EX:Arroz tipo A'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      TextHint = 'EX:Arroz tipo A'
     end
-    object DBGrid1: TDBGrid
+    object dbgridItems: TDBGrid
       Left = 16
       Top = 105
-      Width = 629
+      Width = 645
       Height = 171
-      DataSource = DataSource1
-      TabOrder = 3
+      DataSource = dtsourceItem
+      TabOrder = 5
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clBackground
       TitleFont.Height = -11
@@ -8003,72 +8039,119 @@ object FrmItem: TFrmItem
         item
           Expanded = False
           FieldName = 'id'
+          Title.Caption = 'ID'
+          Width = 78
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'codigo'
-          Width = 80
+          Title.Caption = 'Codigo'
+          Width = 148
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'nome'
-          Width = 141
+          Title.Caption = 'Nome'
+          Width = 119
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'descricao'
+          Title.Caption = 'Descricao'
           Width = 182
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'valorunitario'
+          Title.Caption = 'Vlr Unt.'
           Width = 116
           Visible = True
         end>
     end
     object btnAtualizaGrid: TButton
-      Left = 651
+      Left = 667
       Top = 127
       Width = 75
       Height = 25
+      Hint = 'Atualizar o Grid'
       Caption = '&Atualizar'
-      TabOrder = 4
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 6
+      OnClick = btnAtualizaGridClick
     end
     object btnAlterar: TButton
-      Left = 651
+      Left = 667
       Top = 189
       Width = 75
       Height = 25
+      Hint = 'Alterar o registro'
       Caption = 'Al&terar'
-      TabOrder = 6
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      OnClick = btnAlterarClick
     end
     object btnDeletar: TButton
-      Left = 651
+      Left = 667
       Top = 220
       Width = 75
       Height = 25
+      Hint = 'Deletar o registro selecionado'
       Caption = '&Deletar'
-      TabOrder = 7
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+      OnClick = btnDeletarClick
     end
     object btnSalvar: TButton
-      Left = 651
+      Left = 667
       Top = 251
       Width = 75
       Height = 25
       Caption = '&Salvar'
-      TabOrder = 8
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      OnClick = btnSalvarClick
     end
     object btnNovo: TButton
-      Left = 651
+      Left = 667
       Top = 158
       Width = 75
       Height = 25
+      Hint = 'Limpar os campos e preparado para salvar'
       Caption = '&Novo'
-      TabOrder = 5
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+      OnClick = btnNovoClick
+    end
+    object edtNome: TEdit
+      Left = 257
+      Top = 78
+      Width = 89
+      Height = 21
+      Hint = ' Ex:01'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      TextHint = ' Ex:01'
+    end
+    object edtValorunit: TEdit
+      Left = 574
+      Top = 78
+      Width = 87
+      Height = 21
+      Hint = 'Ex: 2,0'
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+      TextHint = 'Ex: 2,0'
     end
   end
   object btnFechar: TButton
@@ -8076,12 +8159,16 @@ object FrmItem: TFrmItem
     Top = 424
     Width = 75
     Height = 25
+    Hint = 'Fechar a tela'
     Caption = 'Fechar'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
+    OnClick = btnFecharClick
   end
   object QueryGrid: TADOQuery
     Active = True
-    Connection = ADOConnection1
+    Connection = adoConexao
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -8090,7 +8177,7 @@ object FrmItem: TFrmItem
     Left = 65
     Top = 40
   end
-  object ADOConnection1: TADOConnection
+  object adoConexao: TADOConnection
     Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=' +
@@ -8105,7 +8192,7 @@ object FrmItem: TFrmItem
     Left = 145
     Top = 40
   end
-  object DataSource1: TDataSource
+  object dtsourceItem: TDataSource
     DataSet = QueryGrid
     Left = 201
     Top = 40
