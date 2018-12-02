@@ -14,36 +14,33 @@
 * O formulário deverá ser estilizado sem bibliotecas ou componentes terceiros.
 
 
-Sistema Gerenciador de Banco de Dados utilizados e o gerador de Relatório.
+# SQL Server 2012 Express
 
-
-# SQL SERVER 2012 Express
-
-O SGBD [disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
+O "SQL Server 2012 Express" está [disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
 no site da [Microsoft](https://www.microsoft.com/pt-br/)
 versão **```Microsoft SQL Server 2012 - 11.0.2100.60```**
 
-## Reposrt Builder
+## Report Builder (Gerador de relatório )
 
-O Report Builder[disponível](http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
+O Report Builder está [disponível](http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
 no site da [Metaphors](http://www.digital-metaphors.com/) 
 versão **```19.02```**
 
+* Criados Reklatórios simples
+
 ##Informações de acesso a base de dados.
 
-*Usuário:sa
-*Senha:cidadao2018
+* Usuário:sa
+* Senha:cidadao2018
+* String de conexão ADO, caso precise.
 
-String de conexão ADO, caso precise.
-
-Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=cidadao2018;Initial Catalog=dbARECO;Data Source=localhost;Use Procedure for Prepare=1;
+*Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=cidadao2018;Initial Catalog=dbARECO;Data Source=localhost;Use Procedure for Prepare=1;
 Auto Translate=True;Packet Size=4096;Workstation ID=localhost;Initial File Name="";Use Encryption for Data=False;
 Tag with column collation when possible=False;MARS Connection=False;DataTypeCompatibility=0;Trust Server Certificate=False;
 Application Intent=READWRITE;
 
 ## Foi realizado um Bakcup da Base de dados só restaurar, está na raiz do projeto
-pasta chamada de "DB", compactado.
-		 
+pasta chamada de "DB", compactado.	 
 		 
 		 
 ## Funcionamento das Telas
