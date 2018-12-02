@@ -1,5 +1,8 @@
 # Projeto de software simples(CRUD) usando Delphi+POO
 
+[![Build Status](https://travis-ci.com/BoscoBecker/Projeto-Areco.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/BoscoBecker/Projeto-Areco/badge.svg?branch=master)
+
 
 ## Caracteristicas
 
@@ -13,19 +16,17 @@
 
 Sistema Gerenciador de Banco de Dados utilizados e o gerador de Relatório.
 
-[![Build Status](https://travis-ci.com/BoscoBecker/Projeto-Areco.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/BoscoBecker/Projeto-Areco/badge.svg?branch=master)](https://coveralls.io/github/BoscoBecker/Projeto-Areco?branch=master)
 
 # SQL SERVER 2012 Express
 
-O SGBD[ Está disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
-no site da [Microsoft] (https://www.microsoft.com/pt-br/)
+O SGBD[disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
+no site da [Microsoft](https://www.microsoft.com/pt-br/)
 versão **```Microsoft SQL Server 2012 - 11.0.2100.60```**
 
 ## Reposrt Builder
 
-O Report Builder[ Está disponível](http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
-no site da [Metaphors] http://www.digital-metaphors.com/ 
+O Report Builder[disponível](http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
+no site da [Metaphors](http://www.digital-metaphors.com/) 
 versão **```19.02```**
 
 ##Informações de acesso a base de dados.
@@ -61,7 +62,6 @@ e informar os valores nos Edits e depois clicar em alterar,ele subsitiruira os r
 *Botão Imprimir, Imprime o relatório.
 
 
-
 ## IDE 
 
 Projeto realizado em: 
@@ -75,7 +75,8 @@ Copyright © 2011 Embarcadero Technologies, Inc. All Rights Reserved.
 a pasta com o teste e os resultados se encontra em "Testes Dunit".
 
 PS:Na analise apenas foi sugerido usar os enventos dos botões for exemplo no 
-botão Salvar ele sugeriu "btnSalvarClick" por Ex.
+botão Salvar ele sugeriu "btnSalvarClick" por Ex:
+
 ```pascal
 procedure TestTFrmCategoria.TestbtnSalvarClick;
 var
@@ -92,6 +93,8 @@ end;
 * Processador: AMD 1.0 Ghz
 * Memoria RAM : 6.0 GB
 * OS WIndows 10 Pro 64 Bits
+
+# o arquivo .travis.yml e .coveralls.yml, são apenas marcação para o GitHub
 
 #@boscobecker Feito com <3	 
 		 
