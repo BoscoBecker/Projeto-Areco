@@ -1,14 +1,14 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
-			<ProjectGuid>{019A0BB3-E39B-4813-93AD-BEEF0591E646}</ProjectGuid>
+			<ProjectGuid>{F7AEF3D4-2767-4B5C-954F-20E109B93AC9}</ProjectGuid>
 			<ProjectVersion>13.4</ProjectVersion>
 			<FrameworkType>VCL</FrameworkType>
-			<MainSource>Projeto_Areco.dpr</MainSource>
 			<Base>True</Base>
 			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Platform Condition="'$(Platform)'==''">Win32</Platform>
 			<TargetedPlatforms>1</TargetedPlatforms>
 			<AppType>Application</AppType>
+			<MainSource>Projeto_ArecoTests.dpr</MainSource>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
 			<Base>true</Base>
@@ -40,10 +40,11 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
-			<DCC_UsePackage>bindcompfmx;fmx;rtl;dbrtl;IndySystem;DbxClientDriver;bindcomp;inetdb;DBXInterBaseDriver;DataSnapCommon;DataSnapClient;DataSnapServer;DataSnapProviderClient;xmlrtl;ibxpress;DbxCommonDriver;IndyProtocols;DBXMySQLDriver;dbxcds;bindengine;FMXTee;soaprtl;DBXOracleDriver;dsnap;DBXInformixDriver;IndyCore;fmxase;CloudService;FmxTeeUI;DBXFirebirdDriver;inet;fmxobj;inetdbxpress;DBXSybaseASADriver;fmxdae;dbexpress;DataSnapIndy10ServerTransport;IPIndyImpl;$(DCC_UsePackage)</DCC_UsePackage>
-			<Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+			<DCC_UnitSearchPath>$(BDS)\Source\DUnit\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<DCC_UsePackage>fmx;IndySystem;DBXInterBaseDriver;DataSnapCommon;DataSnapClient;DataSnapServer;DataSnapProviderClient;DbxCommonDriver;dbxcds;DBXOracleDriver;dsnap;IndyCore;fmxase;CloudService;inetdbxpress;IPIndyImpl;bindcompfmx;rtl;dbrtl;DbxClientDriver;bindcomp;inetdb;xmlrtl;ibxpress;IndyProtocols;DBXMySQLDriver;bindengine;soaprtl;DBXInformixDriver;DBXFirebirdDriver;inet;fmxobj;DBXSybaseASADriver;fmxdae;dbexpress;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
 			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-			<DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+			<DCC_Define>_CONSOLE_TESTRUNNER;$(DCC_Define)</DCC_Define>
+			<DCC_DcuOutput>.</DCC_DcuOutput>
 			<DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
 			<DCC_E>false</DCC_E>
 			<DCC_N>false</DCC_N>
@@ -52,10 +53,10 @@
 			<DCC_K>false</DCC_K>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win64)'!=''">
-			<DCC_UsePackage>TeeDB;vclib;Tee;DBXOdbcDriver;DBXSybaseASEDriver;vclimg;TeeUI;vclactnband;vcldb;vcldsnap;bindcompvcl;vclie;vcltouch;DBXDb2Driver;websnap;vclribbon;VclSmp;vcl;DataSnapConnectors;DBXMSSQLDriver;dsnapcon;vclx;webdsnap;adortl;$(DCC_UsePackage)</DCC_UsePackage>
+			<DCC_UsePackage>TeeDB;vclib;DBXSybaseASEDriver;vclimg;vcldb;vcldsnap;DBXDb2Driver;vcl;DBXMSSQLDriver;webdsnap;adortl;Tee;DBXOdbcDriver;TeeUI;vclactnband;bindcompvcl;vclie;vcltouch;websnap;VclSmp;DataSnapConnectors;dsnapcon;vclx;$(DCC_UsePackage)</DCC_UsePackage>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
-			<DCC_UsePackage>vcldbx;frx16;TeeDB;Rave100VCL;vclib;Tee;inetdbbde;DBXOdbcDriver;svnui;DBXSybaseASEDriver;vclimg;frxDB16;intrawebdb_120_160;fmi;fs16;TeeUI;vclactnband;vcldb;vcldsnap;bindcompvcl;vclie;vcltouch;Intraweb_120_160;DBXDb2Driver;websnap;vclribbon;frxe16;VclSmp;fsDB16;vcl;DataSnapConnectors;DBXMSSQLDriver;CodeSiteExpressPkg;dsnapcon;vclx;webdsnap;svn;bdertl;adortl;$(DCC_UsePackage)</DCC_UsePackage>
+			<DCC_UsePackage>rbBDE1916;rbUSERDesign1916;TeeDB;Rave100VCL;vclib;inetdbbde;rbIDE1916;rbRIDE1916;rbRAP1916;DBXSybaseASEDriver;dclRBADO1916;rbServiceCore1916;vclimg;rbTC1916;fmi;rbRCL1916;vcldb;rbDBDE1916;vcldsnap;DBXDb2Driver;Intraweb_120_160;rbDAD1916;rbTCUI1916;vclribbon;frxe16;rbClient1916;dclRBIBE1916;vcl;DBXMSSQLDriver;CodeSiteExpressPkg;FmxTeeUI;webdsnap;rbWebTier1916;adortl;dclRBE1916;rbServer1916;rbCIDE1916;vcldbx;frx16;rbIBE1916;Tee;rbADO1916;DBXOdbcDriver;svnui;frxDB16;intrawebdb_120_160;fs16;TeeUI;vclactnband;FMXTee;bindcompvcl;vclie;vcltouch;websnap;rbDIDE1916;VclSmp;fsDB16;DataSnapConnectors;dclRBBDE1916;dsnapcon;rbDBE1916;vclx;svn;rbUSER1916;bdertl;dclRBDBE1916;rbDB1916;$(DCC_UsePackage)</DCC_UsePackage>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
@@ -70,10 +71,6 @@
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_Keys>CompanyName=Areco Sistemas Empresariais;FileDescription=Sistema de Teste para Areco;FileVersion=1.0.0.0;InternalName=;LegalCopyright=boscobecker;LegalTrademarks=Areco Sistemas Empresariais;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=Feito com &lt;3 by @boscobecker</VerInfo_Keys>
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<Icon_MainIcon>Projeto_Areco_Icon1.ico</Icon_MainIcon>
-			<VerInfo_Locale>1046</VerInfo_Locale>
 			<DCC_RemoteDebug>false</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -86,32 +83,14 @@
 			<DelphiCompile Include="$(MainSource)">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="classes\UConexao.pas"/>
-			<DCCReference Include="classes\Ucontrole.pas"/>
-			<DCCReference Include="classes\UCategoria.pas"/>
-			<DCCReference Include="classes\UServico.pas"/>
-			<DCCReference Include="classes\UProduto.pas"/>
-			<DCCReference Include="forms\UfCategoria.pas">
-				<Form>FrmCategoria</Form>
-			</DCCReference>
-			<DCCReference Include="forms\UfProdutos.pas">
-				<Form>FrmProduto</Form>
-			</DCCReference>
-			<DCCReference Include="forms\UFServico.pas">
-				<Form>FrmServico</Form>
-			</DCCReference>
-			<DCCReference Include="forms\UFSplash.pas">
-				<Form>FrmSplash</Form>
-			</DCCReference>
-			<DCCReference Include="classes\UItem.pas">
-				<Form>/UfItem in &apos;forms\UfItem.pas&apos; {FrmItem</Form>
-			</DCCReference>
-			<DCCReference Include="forms\UfItem.pas">
-				<Form>FrmItem</Form>
-			</DCCReference>
-			<DCCReference Include="forms\UfMenu.pas">
-				<Form>FrmMenu</Form>
-			</DCCReference>
+			<DCCReference Include="TestUfCategoria.pas"/>
+			<DCCReference Include="..\forms\UfCategoria.pas"/>
+			<DCCReference Include="TestUfItem.pas"/>
+			<DCCReference Include="..\forms\UfItem.pas"/>
+			<DCCReference Include="TestUfProdutos.pas"/>
+			<DCCReference Include="..\forms\UfProdutos.pas"/>
+			<DCCReference Include="TestUFServico.pas"/>
+			<DCCReference Include="..\forms\UFServico.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -157,22 +136,19 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Source>
-						<Source Name="MainSource">Projeto_Areco.dpr</Source>
+						<Source Name="MainSource">Projeto_ArecoTests.dpr</Source>
 					</Source>
-					<Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-					</Excluded_Packages>
 				</Delphi.Personality>
 				<Deployment/>
 				<Platforms>
 					<Platform value="Win64">False</Platform>
+					<Platform value="OSX32">False</Platform>
 					<Platform value="Win32">True</Platform>
 				</Platforms>
 				<UnitTesting>
-					<TestProjectName>C:\Users\João Bosco\Desktop\Projeto-Areco\Testes Dunit\Projeto_ArecoTests.dproj</TestProjectName>
+					<TestFramework>DUnit / Delphi Win32</TestFramework>
+					<TestRunner>GUI</TestRunner>
+					<SourceProjectName>C:\Users\João Bosco\Desktop\Projeto-Areco\Projeto_Areco.dproj</SourceProjectName>
 				</UnitTesting>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>

@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Data.DB, Data.Win.ADODB,Ucontrole,Uproduto;
+  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Data.DB, Data.Win.ADODB,Ucontrole,Uproduto,
+  ppParameter, ppDesignLayer, ppBands, ppCtrls, ppPrnabl, ppClass, ppCache,
+  ppProd, ppReport, ppComm, ppRelatv, ppDB, ppDBPipe, ppDBBDE, ppVar;
 
 type
   TFrmProduto = class(TForm)
@@ -32,6 +34,26 @@ type
     edtId: TEdit;
     lblId: TLabel;
     lblTitulo: TLabel;
+    btnImprimir: TButton;
+    ppBDEPipelineProduto: TppBDEPipeline;
+    reportProduto: TppReport;
+    ppHeaderBand1: TppHeaderBand;
+    ppLabel1: TppLabel;
+    ppLabel2: TppLabel;
+    ppLabel3: TppLabel;
+    ppLabel4: TppLabel;
+    ppDetailBand1: TppDetailBand;
+    ppDBText2: TppDBText;
+    ppDBText3: TppDBText;
+    ppDBText1: TppDBText;
+    ppLine4: TppLine;
+    ppFooterBand1: TppFooterBand;
+    ppLine2: TppLine;
+    ppLabel5: TppLabel;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppParameterList1: TppParameterList;
+    ppSystemVariable1: TppSystemVariable;
     procedure btnFecharClick(Sender: TObject);
     procedure btnAtualizaGridClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -40,6 +62,7 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnImprimirClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimpaCampos();
@@ -57,6 +80,8 @@ var
 implementation
 
 {$R *.dfm}
+
+
 
 procedure TFrmProduto.AtualizaGrid;
 begin
@@ -123,6 +148,11 @@ end;
 procedure TFrmProduto.btnFecharClick(Sender: TObject);
 begin
   ModalResult := mrClose;
+end;
+
+procedure TFrmProduto.btnImprimirClick(Sender: TObject);
+begin
+  reportProduto.Print;
 end;
 
 procedure TFrmProduto.btnNovoClick(Sender: TObject);
@@ -193,6 +223,7 @@ begin
   btnDeletar.Enabled := not(QueryGrid.IsEmpty);
   btnAlterar.Enabled := not(QueryGrid.IsEmpty);
   btnSalvar.Enabled  := not(QueryGrid.IsEmpty);
+  btnImprimir.Enabled  := not(QueryGrid.IsEmpty);
 end;
 
 end.

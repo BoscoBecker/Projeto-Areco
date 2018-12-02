@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Data.DB, Data.Win.ADODB,Ucontrole,Uservico;
+  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Data.DB, Data.Win.ADODB,Ucontrole,Uservico,
+  ppBands, ppCache, ppClass, ppDB, ppDesignLayer, ppParameter, ppProd, ppReport,
+  ppComm, ppRelatv, ppDBPipe, ppVar, ppCtrls, ppPrnabl;
 
 type
   TFrmServico = class(TForm)
@@ -28,6 +30,22 @@ type
     imgArecoServiços: TImage;
     lblSlogan: TLabel;
     lblTitulo: TLabel;
+    btnImprimir: TButton;
+    ppDBPipeline1: TppDBPipeline;
+    ppReportServiços: TppReport;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppLabel1: TppLabel;
+    ppDBText1: TppDBText;
+    ppLabel2: TppLabel;
+    ppLine1: TppLine;
+    ppLine2: TppLine;
+    ppLabel3: TppLabel;
+    ppSystemVariable1: TppSystemVariable;
     procedure btnFecharClick(Sender: TObject);
     procedure btnAtualizaGridClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
@@ -35,6 +53,7 @@ type
     procedure btnDeletarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnImprimirClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimpaCampos();
@@ -120,6 +139,11 @@ end;
 procedure TFrmServico.btnFecharClick(Sender: TObject);
 begin
   ModalResult := mrClose;
+end;
+
+procedure TFrmServico.btnImprimirClick(Sender: TObject);
+begin
+  ppReportServiços.Print;
 end;
 
 procedure TFrmServico.btnNovoClick(Sender: TObject);

@@ -15,6 +15,8 @@ object FrmMenu: TFrmMenu
   OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Shape1: TShape
@@ -33,10 +35,20 @@ object FrmMenu: TFrmMenu
     Top = 469
     Width = 853
     Height = 19
-    Panels = <>
-    ExplicitLeft = 368
-    ExplicitTop = 288
-    ExplicitWidth = 0
+    Panels = <
+      item
+        Alignment = taCenter
+        Width = 200
+      end
+      item
+        Alignment = taCenter
+        Text = 'Areco Sistemas Empresariais'
+        Width = 500
+      end
+      item
+        Alignment = taCenter
+        Width = 50
+      end>
   end
   object Panel1: TPanel
     Left = 0
@@ -1693,6 +1705,7 @@ object FrmMenu: TFrmMenu
     end
     object itemSobre: TMenuItem
       Caption = 'Sobre'
+      OnClick = itemSobreClick
     end
     object itemSair: TMenuItem
       Caption = 'Sair'

@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,uControle, Vcl.StdCtrls, Vcl.Grids,
   Vcl.DBGrids,Ucategoria, Data.DB, Data.Win.ADODB, Vcl.Imaging.jpeg,
-  Vcl.ExtCtrls, Vcl.Imaging.pngimage ;
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, ppVar, ppCtrls, ppPrnabl, ppClass,
+  ppBands, ppCache, ppDesignLayer, ppParameter, ppDB, ppProd, ppReport, ppComm,
+  ppRelatv, ppDBPipe ;
 
 type
   TFrmCategoria = class(TForm)
@@ -33,6 +35,26 @@ type
     imgArecoCategorias: TImage;
     lblSlogan: TLabel;
     lblTitulo: TLabel;
+    ppDBPipelineCategorias: TppDBPipeline;
+    btnImprimir: TButton;
+    reportCategorias: TppReport;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppLabel1: TppLabel;
+    ppDBText1: TppDBText;
+    ppLabel2: TppLabel;
+    ppDBText2: TppDBText;
+    ppLabel3: TppLabel;
+    ppDBText3: TppDBText;
+    ppLine1: TppLine;
+    ppLabel4: TppLabel;
+    ppLine2: TppLine;
+    ppLabel5: TppLabel;
+    ppSystemVariable1: TppSystemVariable;
     procedure btnSalvarClick(Sender: TObject);
     procedure btnAtualizaGridClick(Sender: TObject);
     procedure btnAlterarClick(Sender: TObject);
@@ -40,6 +62,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
+    procedure btnImprimirClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimpaCampos();
@@ -158,6 +181,11 @@ end;
 procedure TFrmCategoria.btnFecharClick(Sender: TObject);
 begin
   ModalResult := mrClose;
+end;
+
+procedure TFrmCategoria.btnImprimirClick(Sender: TObject);
+begin
+  reportCategorias.Print;
 end;
 
 procedure TFrmCategoria.FormShow(Sender: TObject);

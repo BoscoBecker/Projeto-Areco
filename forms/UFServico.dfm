@@ -28,7 +28,7 @@
   object lblServico: TLabel
     Left = 656
     Top = 82
-    Width = 94
+    Width = 93
     Height = 37
     Caption = 'Servi'#231'os'
     Font.Charset = DEFAULT_CHARSET
@@ -7925,7 +7925,7 @@
     TabOrder = 0
     object lblRegistros: TLabel
       Left = 16
-      Top = 282
+      Top = 286
       Width = 417
       Height = 13
       AutoSize = False
@@ -7961,7 +7961,7 @@
       Left = 16
       Top = 105
       Width = 629
-      Height = 171
+      Height = 180
       DataSource = dtSourceServicos
       TabOrder = 6
       TitleFont.Charset = DEFAULT_CHARSET
@@ -7980,7 +7980,7 @@
     end
     object btnAtualizaGrid: TButton
       Left = 651
-      Top = 127
+      Top = 105
       Width = 75
       Height = 25
       Hint = 'Atualiza o Grid'
@@ -7992,7 +7992,7 @@
     end
     object btnAlterar: TButton
       Left = 651
-      Top = 189
+      Top = 167
       Width = 75
       Height = 25
       Hint = 'Alterar o registro'
@@ -8004,7 +8004,7 @@
     end
     object btnDeletar: TButton
       Left = 651
-      Top = 220
+      Top = 198
       Width = 75
       Height = 25
       Hint = 'Deletar o registro'
@@ -8016,7 +8016,7 @@
     end
     object btnSalvar: TButton
       Left = 651
-      Top = 251
+      Top = 229
       Width = 75
       Height = 25
       Hint = 'Salvar o registro'
@@ -8028,7 +8028,7 @@
     end
     object btnNovo: TButton
       Left = 651
-      Top = 158
+      Top = 136
       Width = 75
       Height = 25
       Hint = 'Limpar os campos e preparado para salvar'
@@ -8046,9 +8046,18 @@
       TabOrder = 0
       TextHint = 'C'#243'digo do Servi'#231'o Ex: 01'
     end
+    object btnImprimir: TButton
+      Left = 651
+      Top = 260
+      Width = 75
+      Height = 25
+      Caption = '&Imprimir'
+      TabOrder = 7
+      OnClick = btnImprimirClick
+    end
   end
   object btnFechar: TButton
-    Left = 675
+    Left = 674
     Top = 435
     Width = 75
     Height = 25
@@ -8060,6 +8069,7 @@
     OnClick = btnFecharClick
   end
   object QueryGrid: TADOQuery
+    Active = True
     Connection = adoConexao
     CursorType = ctStatic
     Parameters = <>
@@ -8072,12 +8082,8 @@
     Connected = True
     ConnectionString = 
       'Provider=SQLNCLI11.1;Persist Security Info=False;User ID=sa;Pwd=' +
-      'cidadao2018;Initial Catalog=dbARECO;Data Source=BOSCO;Use Proced' +
-      'ure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstati' +
-      'on ID=BOSCO;Initial File Name="";Use Encryption for Data=False;T' +
-      'ag with column collation when possible=False;MARS Connection=Fal' +
-      'se;DataTypeCompatibility=0;Trust Server Certificate=False;Applic' +
-      'ation Intent=READWRITE;'
+      'cidadao2018;Initial Catalog=dbARECO;Data Source=localhost;Use Pr' +
+      'ocedure for Prepare=1;'
     LoginPrompt = False
     Provider = 'SQLNCLI11.1'
     Left = 152
@@ -8087,5 +8093,236 @@
     DataSet = QueryGrid
     Left = 208
     Top = 48
+  end
+  object ppDBPipeline1: TppDBPipeline
+    DataSource = dtSourceServicos
+    UserName = 'DBPipeline1'
+    Left = 520
+    Top = 72
+  end
+  object ppReportServiços: TppReport
+    AutoStop = False
+    DataPipeline = ppDBPipeline1
+    PassSetting = psTwoPass
+    PrinterSetup.BinName = 'Default'
+    PrinterSetup.DocumentName = 'Report'
+    PrinterSetup.PaperName = 'A4'
+    PrinterSetup.PrinterName = 'Default'
+    PrinterSetup.SaveDeviceSettings = False
+    PrinterSetup.mmMarginBottom = 6350
+    PrinterSetup.mmMarginLeft = 6350
+    PrinterSetup.mmMarginRight = 6350
+    PrinterSetup.mmMarginTop = 6350
+    PrinterSetup.mmPaperHeight = 297000
+    PrinterSetup.mmPaperWidth = 210000
+    PrinterSetup.PaperSize = 9
+    ArchiveFileName = '($MyDocuments)\ReportArchive.raf'
+    DeviceType = 'Screen'
+    DefaultFileDeviceType = 'PDF'
+    EmailSettings.ReportFormat = 'PDF'
+    LanguageID = 'Default'
+    OpenFile = False
+    OutlineSettings.CreateNode = True
+    OutlineSettings.CreatePageNodes = True
+    OutlineSettings.Enabled = True
+    OutlineSettings.Visible = True
+    ThumbnailSettings.Enabled = True
+    ThumbnailSettings.Visible = True
+    ThumbnailSettings.DeadSpace = 30
+    ThumbnailSettings.PageHighlight.Width = 3
+    PDFSettings.EmbedFontOptions = [efUseSubset]
+    PDFSettings.EncryptSettings.AllowCopy = True
+    PDFSettings.EncryptSettings.AllowInteract = True
+    PDFSettings.EncryptSettings.AllowModify = True
+    PDFSettings.EncryptSettings.AllowPrint = True
+    PDFSettings.EncryptSettings.AllowExtract = True
+    PDFSettings.EncryptSettings.AllowAssemble = True
+    PDFSettings.EncryptSettings.AllowQualityPrint = True
+    PDFSettings.EncryptSettings.Enabled = False
+    PDFSettings.EncryptSettings.KeyLength = kl40Bit
+    PDFSettings.EncryptSettings.EncryptionType = etRC4
+    PDFSettings.FontEncoding = feAnsi
+    PDFSettings.ImageCompressionLevel = 25
+    PDFSettings.PDFAFormat = pafNone
+    PreviewFormSettings.PageBorder.mmPadding = 0
+    RTFSettings.DefaultFont.Charset = DEFAULT_CHARSET
+    RTFSettings.DefaultFont.Color = clWindowText
+    RTFSettings.DefaultFont.Height = -13
+    RTFSettings.DefaultFont.Name = 'Arial'
+    RTFSettings.DefaultFont.Style = []
+    TextFileName = '($MyDocuments)\Report.pdf'
+    TextSearchSettings.DefaultString = '<FindText>'
+    TextSearchSettings.Enabled = True
+    XLSSettings.AppName = 'ReportBuilder'
+    XLSSettings.Author = 'ReportBuilder'
+    XLSSettings.Subject = 'Report'
+    XLSSettings.Title = 'Report'
+    XLSSettings.WorksheetName = 'Report'
+    Left = 440
+    Top = 72
+    Version = '19.02'
+    mmColumnWidth = 0
+    DataPipelineName = 'ppDBPipeline1'
+    object ppHeaderBand1: TppHeaderBand
+      Background.Brush.Style = bsClear
+      Border.mmPadding = 0
+      mmBottomOffset = 0
+      mmHeight = 19315
+      mmPrintPosition = 0
+      object ppLabel1: TppLabel
+        DesignLayer = ppDesignLayer1
+        UserName = 'Label1'
+        AutoSize = False
+        Border.mmPadding = 0
+        Caption = 'C'#243'digo do Servi'#231'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 4763
+        mmLeft = 66411
+        mmTop = 14023
+        mmWidth = 41804
+        BandType = 0
+        LayerName = Foreground
+      end
+      object ppLabel2: TppLabel
+        DesignLayer = ppDesignLayer1
+        UserName = 'Label2'
+        Border.mmPadding = 0
+        Caption = 'Listagem de Servi'#231'os'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 20
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 8467
+        mmLeft = 51065
+        mmTop = 2381
+        mmWidth = 68791
+        BandType = 0
+        LayerName = Foreground
+      end
+      object ppLine1: TppLine
+        DesignLayer = ppDesignLayer1
+        UserName = 'Line1'
+        Border.mmPadding = 0
+        Position = lpBottom
+        Weight = 0.750000000000000000
+        mmHeight = 3969
+        mmLeft = 9790
+        mmTop = 15877
+        mmWidth = 178330
+        BandType = 0
+        LayerName = Foreground
+      end
+    end
+    object ppDetailBand1: TppDetailBand
+      Background1.Brush.Style = bsClear
+      Background2.Brush.Style = bsClear
+      Border.mmPadding = 0
+      mmBottomOffset = 0
+      mmHeight = 7144
+      mmPrintPosition = 0
+      object ppDBText1: TppDBText
+        DesignLayer = ppDesignLayer1
+        UserName = 'DBText1'
+        Border.mmPadding = 0
+        DataField = 'codigoservico'
+        DataPipeline = ppDBPipeline1
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 12
+        Font.Style = []
+        TextAlignment = taCentered
+        Transparent = True
+        DataPipelineName = 'ppDBPipeline1'
+        mmHeight = 4763
+        mmLeft = 66411
+        mmTop = 529
+        mmWidth = 41804
+        BandType = 4
+        LayerName = Foreground
+      end
+    end
+    object ppFooterBand1: TppFooterBand
+      Background.Brush.Style = bsClear
+      Border.mmPadding = 0
+      mmBottomOffset = 0
+      mmHeight = 25400
+      mmPrintPosition = 0
+      object ppLine2: TppLine
+        DesignLayer = ppDesignLayer1
+        UserName = 'Line2'
+        Border.mmPadding = 0
+        Position = lpBottom
+        Weight = 0.750000000000000000
+        mmHeight = 3969
+        mmLeft = 0
+        mmTop = 21431
+        mmWidth = 197115
+        BandType = 8
+        LayerName = Foreground
+      end
+      object ppLabel3: TppLabel
+        DesignLayer = ppDesignLayer1
+        UserName = 'Label3'
+        Border.mmPadding = 0
+        Caption = 'Areco Sistemas Empresariais'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 20
+        Font.Style = []
+        FormFieldSettings.FormSubmitInfo.SubmitMethod = fstPost
+        FormFieldSettings.FormFieldType = fftNone
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 8467
+        mmLeft = 0
+        mmTop = 12171
+        mmWidth = 197115
+        BandType = 8
+        LayerName = Foreground
+      end
+      object ppSystemVariable1: TppSystemVariable
+        DesignLayer = ppDesignLayer1
+        UserName = 'SystemVariable1'
+        Border.mmPadding = 0
+        VarType = vtPageSet
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 20
+        Font.Style = []
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 8466
+        mmLeft = 89429
+        mmTop = 265
+        mmWidth = 17992
+        BandType = 8
+        LayerName = Foreground
+      end
+    end
+    object ppDesignLayers1: TppDesignLayers
+      object ppDesignLayer1: TppDesignLayer
+        UserName = 'Foreground'
+        LayerType = ltBanded
+        Index = 0
+      end
+    end
+    object ppParameterList1: TppParameterList
+    end
   end
 end
