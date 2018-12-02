@@ -20,15 +20,15 @@ O "SQL Server 2012 Express" está [disponível](https://www.microsoft.com/pt-br/
 no site da [Microsoft](https://www.microsoft.com/pt-br/)
 versão **```Microsoft SQL Server 2012 - 11.0.2100.60```**
 
-## Report Builder (Gerador de relatório )
+# Report Builder (Gerador de relatório )
 
 O Report Builder está [disponível](http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
 no site da [Metaphors](http://www.digital-metaphors.com/) 
 versão **```19.02```**
 
-* Criados Reklatórios simples
+* Criados Relatórios simples
 
-##Informações de acesso a base de dados.
+#Informações de acesso a base de dados.
 
 * Usuário:sa
 * Senha:cidadao2018
@@ -39,11 +39,10 @@ Auto Translate=True;Packet Size=4096;Workstation ID=localhost;Initial File Name=
 Tag with column collation when possible=False;MARS Connection=False;DataTypeCompatibility=0;Trust Server Certificate=False;
 Application Intent=READWRITE;
 
-## Foi realizado um Bakcup da Base de dados só restaurar, está na raiz do projeto
-pasta chamada de "DB", compactado.	 
+## Foi realizado um Bakcup da Base de dados, só restaurar, está na raiz do projeto pasta chamada de "DB", compactado.	 
 		 
 		 
-## Funcionamento das Telas
+# Funcionamento das Telas
 
 Explicando o funcionamento dos cadastros de todas as telas...		 
 
@@ -59,14 +58,14 @@ e informar os valores nos Edits e depois clicar em alterar,ele subsitiruira os r
 *Botão Imprimir, Imprime o relatório.
 
 
-## IDE de Desenvolvimento
+# IDE de Desenvolvimento
 
 Projeto realizado em: 
 Embarcadero® RAD Studio XE2 Version 16.0.4316.44803 
 Copyright © 2011 Embarcadero Technologies, Inc. All Rights Reserved.
 
 
-## Testes DUNIT
+# Testes DUNIT
 
 *Foi executado o Teste/Teste Case com as Telas de cadastros que contem os CRUDs
 a pasta com o teste e os resultados se encontra em "Testes Dunit".
@@ -85,7 +84,7 @@ begin
 end;
 ```
 
-## Maquina usada para o desenvolvimento
+# Maquina usada para o desenvolvimento
 
 * Processador: AMD 1.0 Ghz
 * Memoria RAM : 6.0 GB
