@@ -1,20 +1,32 @@
-
 # Projeto de software simples(CRUD) usando Delphi+POO
+
+
+## Caracteristicas
+
+* Utilizar Delphi XE2 +
+* Persistir os dados em um banco de dados de sua preferência.
+* Permitir que o usuário inclua, atualize e delete registros.
+* Os cadastros deverão ser efetuado em formulários e os mesmos devem ser exibidos de maneira modal (ShowModal).
+* Listar os itens na tela inicial da aplicação (Apenas as informações comuns)
+* O formulário deverá ser estilizado sem bibliotecas ou componentes terceiros.
+
 
 Sistema Gerenciador de Banco de Dados utilizados e o gerador de Relatório.
 
-[![Build Status](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
+[![Build Status](https://travis-ci.com/BoscoBecker/Projeto-Areco.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/BoscoBecker/Projeto-Areco/badge.svg?branch=master)](https://coveralls.io/github/BoscoBecker/Projeto-Areco?branch=master)
 
 # SQL SERVER 2012 Express
 
-O [SQL SERVER 2012 Express](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
-pode ser baixado com o Front-end e com tudo completo.
+O SGBD[ Está disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
+no site da [Microsoft] (https://www.microsoft.com/pt-br/)
+versão **```Microsoft SQL Server 2012 - 11.0.2100.60```**
 
 ## Reposrt Builder
 
-O  [Reposrt Builder] (http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
-pode ser baixado no link .
+O Report Builder[ Está disponível](http://www.digital-metaphors.com/download/demo/server/rbServ16d.exe)
+no site da [Metaphors] http://www.digital-metaphors.com/ 
+versão **```19.02```**
 
 ##Informações de acesso a base de dados.
 
@@ -64,13 +76,23 @@ a pasta com o teste e os resultados se encontra em "Testes Dunit".
 
 PS:Na analise apenas foi sugerido usar os enventos dos botões for exemplo no 
 botão Salvar ele sugeriu "btnSalvarClick" por Ex.
+```pascal
+procedure TestTFrmCategoria.TestbtnSalvarClick;
+var
+  Sender: TObject;
+begin
+  // TODO: Setup method call parameters
+  FFrmCategoria.btnSalvarClick(Sender);
+  // TODO: Validate method results
+end;
+```
 
 ## Maquina usada para o desenvolvimento
 
-*Processador: AMD 1.0 Ghz
-*Memoria RAM : 6.0 GB
-*OS WIndows 10 Pro 64 Bits
+* Processador: AMD 1.0 Ghz
+* Memoria RAM : 6.0 GB
+* OS WIndows 10 Pro 64 Bits
 
-@boscobecker Feito com <3	 
+#@boscobecker Feito com <3	 
 		 
 		 
