@@ -19,7 +19,7 @@ Sistema Gerenciador de Banco de Dados utilizados e o gerador de Relatório.
 
 # SQL SERVER 2012 Express
 
-O SGBD[disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
+O SGBD [disponível](https://www.microsoft.com/pt-br/download/confirmation.aspx?id=29062&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1)
 no site da [Microsoft](https://www.microsoft.com/pt-br/)
 versão **```Microsoft SQL Server 2012 - 11.0.2100.60```**
 
@@ -62,7 +62,7 @@ e informar os valores nos Edits e depois clicar em alterar,ele subsitiruira os r
 *Botão Imprimir, Imprime o relatório.
 
 
-## IDE 
+## IDE de Desenvolvimento
 
 Projeto realizado em: 
 Embarcadero® RAD Studio XE2 Version 16.0.4316.44803 
@@ -94,8 +94,8 @@ end;
 * Memoria RAM : 6.0 GB
 * OS WIndows 10 Pro 64 Bits
 
-# o arquivo .travis.yml e .coveralls.yml, são apenas marcação para o GitHub
+* o arquivo .travis.yml e .coveralls.yml, são apenas marcação para o GitHub
 
-#@boscobecker Feito com <3	 
+# boscobecker Feito com <3	 
 		 
 		 
