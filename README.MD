@@ -1,5 +1,5 @@
 
-# Projeto de software simples de CRUD usando Delphi+POO
+# Projeto de software simples(CRUD) usando Delphi+POO
 
 Sistema Gerenciador de Banco de Dados utilizados e o gerador de Relatório.
 
