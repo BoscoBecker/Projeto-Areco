@@ -1,7 +1,7 @@
 # Projeto de software simples(CRUD) usando Delphi+POO
 
-[![Build Status](https://travis-ci.com/BoscoBecker/Projeto-Areco.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/BoscoBecker/Projeto-Areco/badge.svg?branch=master)
+[![Build Status](https://travis-ci.com/BoscoBecker/Projeto-Areco.svg?branch=master)](https://travis-ci.com/BoscoBecker/Projeto-Areco.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/BoscoBecker/Projeto-Areco/badge.svg?branch=master)](https://coveralls.io/repos/github/BoscoBecker/Projeto-Areco/badge.svg?branch=master)
 
 
 ## Caracteristicas
